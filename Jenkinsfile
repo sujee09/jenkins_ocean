@@ -4,6 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Hello!'
+        sh 'echo "Second step"'
+        sleep 1
       }
     }
 
@@ -21,6 +23,12 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deploy!'
       }
     }
 
